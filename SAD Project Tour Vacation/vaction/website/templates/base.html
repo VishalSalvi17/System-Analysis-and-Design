@@ -1,0 +1,158 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Mumbai tour Managment</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'website/css/open-iconic-bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'website/css/animate.css' %}">
+    
+    <link rel="stylesheet" href="{% static 'website/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'website/css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'website/css/magnific-popup.css' %}">
+
+    <link rel="stylesheet" href="{% static 'website/css/aos.css' %}">
+
+    <link rel="stylesheet" href="{% static 'website/css/ionicons.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'website/css/bootstrap-datepicker.css' %}">
+    <link rel="stylesheet" href="{% static 'website/css/jquery.timepicker.css' %}">
+
+    
+    <link rel="stylesheet" href="{% static 'website/css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'website/css/icomoon.css' %}">
+    <link rel="stylesheet" href="{% static 'website/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'website/css/style2.css' %}">
+    <link rel="stylesheet" href="{% static 'website/css/style3.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+	  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+	    <div class="container">
+	      <a class="navbar-brand" href="{% url 'home' %}">Mumbai<span>Tour Management</span></a>
+	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="oi oi-menu"></span> Menu
+	      </button>
+
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav ml-auto">
+	          <li class="nav-item"><a href="{% url 'home' %}" class="nav-link">Home</a></li>
+	          <!-- <li class="nav-item"><a href="{% url 'about' %}" class="nav-link">Rooms</a></li> -->
+	          <li class="nav-item"><a href="{% url 'destination' %}" class="nav-link">Hotels</a></li>
+	          <li class="nav-item"><a href="{% url 'contact' %}" class="nav-link">Contact</a></li>
+            
+
+            {% if user.is_authenticated %}
+
+              <li class="nav-item"><a href="{% url 'payment' %}" class="nav-link">Payment</a></li>
+              <li class="nav-item"><a href="{% url 'logout' %}" class="nav-link">Logout</a></li> 
+
+             
+
+            {% else %}
+              <li class="nav-item"><a href="{% url 'register' %}" class="nav-link">Register</a></li>
+              <li class="nav-item"><a href="{% url 'login' %}" class="nav-link">Login</a></li> 
+
+            {% endif %}
+
+	        </ul>
+	      </div>
+	    </div>
+	  </nav>
+    <!-- END nav -->
+
+{% block content %}
+
+{% endblock %}
+
+    <footer class="ftco-footer bg-bottom" style="background-image: url({% static 'website/images/footer-bg.jpg' %});">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">Mumbai Tour Managment</h2>
+              <p>Mumbai Tour Managment allows the user to access all details to location, history and reviews.</p>
+              <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
+                <li class="ftco-animate"><a href="https://twitter.com/?lang=en"><span class="icon-twitter"></span></a></li>
+                <li class="ftco-animate"><a href="https://www.facebook.com/profile.php?id=100007666575776"><span class="icon-facebook"></span></a></li>
+                <li class="ftco-animate"><a href="https://www.instagram.com/"><span class="icon-instagram"></span></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4 ml-md-5">
+              <h2 class="ftco-heading-2">Information</h2>
+              <ul class="list-unstyled">
+                <li><a href="#" class="py-2 d-block">Online Enquiry</a></li>
+                <li><a href="#" class="py-2 d-block">General Enquiries</a></li>
+                <li><a href="#" class="py-2 d-block">Booking Conditions</a></li>
+                <li><a href="#" class="py-2 d-block">Privacy and Policy</a></li>
+                <li><a href="#" class="py-2 d-block">Call Us</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md">
+             <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">Experience</h2>
+              <ul class="list-unstyled">
+                <li><a href="#" class="py-2 d-block">Adventure</a></li>
+                <li><a href="#" class="py-2 d-block">Hotel and Restaurant</a></li>
+                <li><a href="#" class="py-2 d-block">Beach</a></li>
+                <li><a href="#" class="py-2 d-block">Nature</a></li>
+                <li><a href="#" class="py-2 d-block">Camping</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4">
+            	<h2 class="ftco-heading-2">Have a Questions?</h2>
+            	<div class="block-23 mb-3">
+	              <ul>
+	                <li><span class="icon icon-map-marker"></span><span class="text">203 Fake St. Mountain View, Andheri West, Mumbai, India</span></li>
+	                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+91 8329502087</span></a></li>
+	                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">info@gmail.com</span></a></li>
+	              </ul>
+	            </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 text-center">
+
+            <p>
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved by Shivam <a href="https://colorlib.com" target="_blank"></a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    
+  
+
+  <!-- loader -->
+ 
+
+
+  <script src="{% static 'website/js/jquery.min.js' %}"></script>
+  <script src="{% static 'website/js/jquery-migrate-3.0.1.min.js' %}"></script>
+  <script src="{% static 'website/js/popper.min.js' %}"></script>
+  <script src="{% static 'website/js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'website/js/jquery.easing.1.3.js' %}"></script>
+  <script src="{% static 'website/js/jquery.waypoints.min.js' %}"></script>
+  <script src="{% static 'website/js/jquery.stellar.min.js' %}"></script>
+  <script src="{% static 'website/js/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'website/js/jquery.magnific-popup.min.js' %}"></script>
+  <script src="{% static 'website/js/aos.js' %}"></script>
+  <script src="{% static 'website/js/jquery.animateNumber.min.js' %}"></script>
+  <script src="{% static 'website/js/bootstrap-datepicker.js' %}"></script>
+  <script src="{% static 'website/js/scrollax.min.js' %}"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script src="{% static 'website/js/google-map.js' %}"></script>
+  <script src="{% static 'website/js/main.js' %}"></script>
+    
+  </body>
+</html>

@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    
+   <section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('{% static 'website/images/register.jpg' %}');" data-stellar-background-ratio="0.5"> 
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-center">
+          <div class="col-md-9 ftco-animate pb-5 text-center">
+            <h1 class="mb-3 bread" style="color:black;">Registration Page</h1>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <br>
+    <div>
+      <center>
+        {% for i in messages%}
+        <h1 style="padding: 100px;"><b>Error: {{i}}</b></h1>
+        {% endfor %}
+      </center>
+    </div>
+    <br>
+
+
+    <form action="register" method="post">
+    {% csrf_token %}
+    <div class="div1">
+      <div class="container1">
+        <h1><b>Register</b></h1>
+        <p><h6 style="color: black">Please fill in this form to create an account.</h6></p>
+        <hr>
+
+        <label for="first_name" style="color: black"><b>First Name</b></label>
+        <input type="text" placeholder="First Name" name="first_name">
+
+        <label for="last_name" style="color: black"><b>Last Name</b></label>
+        <input type="text" placeholder="Last Name" name="last_name">
+
+        <label for="username" style="color: black"><b>User Name</b></label>
+        <input type="text" placeholder="User Name" name="username">
+
+
+        <label for="email" style="color: black"><b>Email</b></label>
+        <input type="email" placeholder="Enter Email" name="email">
+
+
+        <label for="psw" style="color: black"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw">
+
+        <label for="psw_repeat" style="color: black"><b>Repeat Password</b></label>
+        <input type="password" placeholder="Repeat Password" name="psw_repeat">
+        <hr>
+
+        <button type="submit" class="container1 registerbtn" style="color: black">Register</button>
+      </div>
+      
+      <div class="container1 signin" style="color: black">
+        <p>Already have an account? <a href="login">Sign in</a>.</p>
+      </div>
+    </div>  
+    </form>
+
+
+
+  
+    
+
+{% endblock %}

@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    
+   <section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('{% static 'website/images/login4.jpg' %}');" data-stellar-background-ratio="0.5"> 
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-center">
+          <div class="col-md-9 ftco-animate pb-5 text-center">
+            <h1 class="mb-3 bread" style="color:black;">Login Page</h1>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <br>
+    <div>
+      <center>
+        {% for i in messages%}
+        <h1 style="padding: 100px;"><b>Error: {{i}}</b></h1>
+        {% endfor %}
+      </center>
+    </div>
+    <br>
+
+
+    <form action="login" method="post">
+    {% csrf_token %}
+    <div class="div2">
+      <div class="container1">
+        <h1><b>Login</b></h1>
+        <p><h6 style="color: black">Please enter username and password to login.</h6></p>
+        <hr>
+
+        <label for="username" style="color: black"><b>User Name</b></label>
+        <input type="text" placeholder="User Name" name="username">
+
+        <label for="psw" style="color: black"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw">
+
+        <hr>
+
+        <button type="submit" class="container1 registerbtn" style="color: black">Login</button>
+      </div>
+      <div class="container1 signin" style="color: black">
+        <p>Dont have an account? <a href="register">Sign up</a>.</p>
+      </div>
+    </div>  
+    </form>
+
+    <br>
+    <br>
+
+
+{% endblock %}

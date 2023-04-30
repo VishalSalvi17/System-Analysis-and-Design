@@ -1,0 +1,235 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+    <div class="hero-wrap js-fullheight" style="background-image: url('{% static 'website/images/BG2.jpg' %}');" data-stellar-background-ratio="0.5">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center" data-scrollax-parent="true">
+          <div class="col-md-9 text text-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
+            {% if user.is_authenticated %}
+              <h1 data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Welcome {{user.first_name}}</h1>
+
+            {% else %}
+            
+            <p class="caps" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Travel to the most beautiful city, the city of dreams</p>
+            <h1 data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Make Your Tour Amazing With Us</h1>
+
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+
+    <section class="ftco-section services-section bg-light">
+      <div class="container">
+        <div class="row d-flex">
+          <div class="col-md-6 order-md-last heading-section pl-md-5 ftco-animate">
+          	<h2 class="mb-4">It's time to start your adventure</h2>
+            <p>Man is a traveler by nature. He does not like to keep static at a place for a long time. So, people like to visit new places whenever they find time and opportunity. People travel for different purposes. Some travel for getting an education and some travel for pleasure. Many people also travel for business and employment.</p> 
+            <p>Travelling is, indeed, very pleasant. It is useful too. By traveling to new places we can know new people and learn many new things. Travelling opens new vistas of experience and understanding for us.</p>
+            
+            
+          </div>
+          <div class="col-md-6">
+          	<div class="row">
+          		<div class="col-md-6 d-flex align-self-stretch ftco-animate">
+		            <div class="media block-6 services d-block">
+		              <div class="icon"></span></div>
+		              <div class="media-body">
+		                <h3 class="heading mb-3">Activities</h3>
+		                <p>It includes wildlife watching, water sports, city life, camping, safaris, fishing.</p>
+		              </div>
+		            </div>      
+		          </div>
+		          <div class="col-md-6 d-flex align-self-stretch ftco-animate">
+		            <div class="media block-6 services d-block">
+		              <div class="icon"></span></div>
+		              <div class="media-body">
+		                <h3 class="heading mb-3">Travel Arrangements</h3>
+		                <p>Choose your ideal travel dates based on the activities you plan to do. </p>
+		              </div>
+		            </div>    
+		          </div>
+		          <div class="col-md-6 d-flex align-self-stretch ftco-animate">
+		            <div class="media block-6 services d-block">
+		              <div class="icon"></span></div>
+		              <div class="media-body">
+		                <h3 class="heading mb-3">Hotel Booking</h3>
+		                <p> Book Now,Sign Up For Deals. Become An Affiliate. Register Online. Search Hotels. </p>
+		              </div>
+		            </div>      
+		          </div>
+		          <div class="col-md-6 d-flex align-self-stretch ftco-animate">
+		            <div class="media block-6 services d-block">
+		              <div class="icon"></span></div>
+		              <div class="media-body">
+		                <h3 class="heading mb-3">City Tours</h3>
+		                <p>Make arrangements with local restaurants, art galleries, and theatres, or to a flea market</p>
+		              </div>
+		            </div>      
+		          </div>
+          	</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ftco-counter img" id="section-counter">
+    	<div class="container">
+    		<div class="row d-flex">
+    			<div class="col-md-6 d-flex">
+    				<div class="img d-flex align-self-stretch" style="background-image:url({% static 'website/images/abt2.jpg'%});"></div>
+    			</div>
+    			<div class="col-md-6 pl-md-5 py-5">
+    				<div class="row justify-content-start pb-3">
+		          <div class="col-md-12 heading-section ftco-animate">
+		            <h2 class="mb-4">Make Your Tour Memorable and Safe With Us</h2>
+		            <p>Travelling is, indeed, very pleasant. It is useful too. By traveling to new places we can know new people and learn many new things. Travelling opens new vistas of experience and understanding for us.</p>
+		          </div>
+		        </div>
+		    		<div class="row">
+		          <div class="col-md-4 justify-content-center counter-wrap ftco-animate">
+		            <div class="block-18 text-center mb-4">
+		              <div class="text">
+		                <strong class="number" data-number="50">0</strong>
+		                <span>Successful Tours</span>
+		              </div>
+		            </div>
+		          </div>
+		          <div class="col-md-4 justify-content-center counter-wrap ftco-animate">
+		            <div class="block-18 text-center mb-4">
+		              <div class="text">
+		                <strong class="number" data-number="50">0</strong>
+		                <span>Happy Tourist</span>
+		              </div>
+		            </div>
+		          </div>
+		          <div class="col-md-4 justify-content-center counter-wrap ftco-animate">
+		            <div class="block-18 text-center mb-4">
+		              <div class="text">
+		                <strong class="number" data-number="20">0</strong>
+		                <span>Place Explored</span>
+		              </div>
+		            </div>
+		          </div>
+		        </div>
+	        </div>
+        </div>
+    	</div>
+    </section>
+    <br>
+    <br>
+    
+
+    <section class="ftco-section ftco-no-pt">
+    	<div class="container">
+    		<div class="row justify-content-center pb-4">
+          <div class="col-md-12 heading-section text-center ftco-animate">
+            <h2 class="mb-4">Tour Destination</h2>
+          </div>
+        </div>
+        <div class="row">
+          {% for i in locs %}
+        	<div class="col-md-4 ftco-animate">
+        		<div class="project-wrap">
+        			<a href="{% url 'destination' %}" class="img" 
+                    style="background-image: url({{i.img.url}});"></a>
+        			<div class="text p-4">
+        				<!-- <span class="price">{{ i.price }}</span> -->
+        				<span class="days">{{ i.day }}</span>
+        				<h3><a href="#">{{ i.name }}</a></h3>
+        				<p class="location"><span class="ion-ios-map"></span>{{ i.address }}</p>
+        			</div>
+        		</div>
+        	</div>
+        	{% endfor %}
+            
+        </div>
+    	</div>
+    </section>
+    <section class="ftco-section testimony-section bg-bottom" style="background-image: url({% static 'website/images/bg_3.jpg' %});">
+      <div class="container">
+        <div class="row justify-content-center pb-4">
+          <div class="col-md-7 text-center heading-section ftco-animate">
+            <h2 class="mb-4">Tourist Feedback</h2>
+          </div>
+        </div>
+        <div class="row ftco-animate">
+          <div class="col-md-12">
+            <div class="carousel-testimony owl-carousel ftco-owl">
+              <div class="item">
+                <div class="testimony-wrap py-4">
+                  <div class="text">
+                    <p class="mb-4">Mumbai Tour has given the best vacation experience in budget price. The service provided by the agency was excellent. Thanks for making our trip memorable.</p>
+                    <div class="d-flex align-items-center">
+                      <div class="user-img" style="background-image: url({% static 'website/images/person_1.jpg' %})"></div>
+                      <div class="pl-3">
+                        <p class="name">John Scott</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimony-wrap py-4">
+                  <div class="text">
+                    <p class="mb-4">The tour was very Fantastic because of Pleasure India Holidays very well Organize. Through out the Tour we had pleasant experience and follow up from Travel Agent ( Vishal ).</p>
+                    <div class="d-flex align-items-center">
+                      <div class="user-img" style="background-image: url({% static 'website/images/person_3.jpg' %})"></div>
+                      <div class="pl-3">
+                        <p class="name">Alex Fernandes</p>
+                        
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimony-wrap py-4">
+                  <div class="text">
+                    <p class="mb-4">All your arrangements were up to the mark. All hotels and transportation arrangements were excellent.Thanks for your support and prompt response.</p>
+                    <div class="d-flex align-items-center">
+                      <div class="user-img" style="background-image: url({% static 'website/images/person_3.jpg' %})"></div>
+                      <div class="pl-3">
+                        <p class="name">Jack Scott</p>
+                       
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimony-wrap py-4">
+                  <div class="text">
+                    <p class="mb-4">All your arrangements were up to the mark. All hotels and transportation arrangements were excellent.Thanks for your support and prompt response.</p>
+                    <div class="d-flex align-items-center">
+                      <div class="user-img" style="background-image: url({% static 'website/images/person_1.jpg' %})"></div>
+                      <div class="pl-3">
+                        <p class="name">Luis Rego</p>               
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimony-wrap py-4">
+                  <div class="text">
+                    <p class="mb-4">All your arrangements were up to the mark. All hotels and transportation arrangements were excellent.Thanks for your support and prompt response.</p>
+                    <div class="d-flex align-items-center">
+                      <div class="user-img" style="background-image: url({% static 'website/images/person_2.jpg' %})"></div>
+                      <div class="pl-3">
+                        <p class="name">Pierre Coelho</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+{% endblock %}

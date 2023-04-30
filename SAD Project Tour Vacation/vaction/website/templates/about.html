@@ -1,0 +1,186 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+      .mySlides {display:none;}
+    </style>
+
+    <div class="hero-wrap hero-wrap-2 js-fullheight" style="max-width:1300px">
+      <img class="mySlides" src="{% static 'website/images/fr1.jpg'%}" style="width:100%">
+      <img class="mySlides" src="{% static 'website/images/hr1.jpg'%}" style="width:100%">
+      <img class="mySlides" src="{% static 'website/images/hr2.jpg'%}" style="width:100%">
+      <img class="mySlides" src="{% static 'website/images/fr4.jpg'%}" style="width:100%">
+
+    </div>
+    <script>
+      var myIndex = 0;
+      carousel();
+
+      function carousel() {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";  
+        }
+        myIndex++;
+        if (myIndex > x.length) {myIndex = 1}    
+        x[myIndex-1].style.display = "block";  
+        setTimeout(carousel, 2000);
+      }
+    </script>
+
+    <section class="ftco-section services-section bg-light">
+      <div class="container">
+        <div class="row d-flex">
+          <div class="col-md-6 order-md-last heading-section pl-md-5 ftco-animate">
+          	<h2 class="mb-4">Hotel Description</h2>
+
+            <p>Offering comfort and great services at budget rates, It is an ideal lodging for travelers touring the city. Maintained by a skilled and friendly staff, the Mumbai Tour Management ensures you have a good stay.</p>
+
+            <h2 class="mb-4">Hotel Policies {{fv}}</h2>
+            <p>1. Check-in: 12:00pm | Check-out: 11:00am</p>
+            <p>2. Couples are welcome</p>
+            <p>3. Guests can check in using any local or outstation     
+                  ID proof (PAN card not accepted).</p>
+
+            {% if user.is_authenticated %}
+              <p><a href="{% url 'payment' %}" class="btn btn-primary py-3 px-4">Book Now</a></p>
+
+            {% else %}  
+              <p><a href="{% url 'login' %}" class="btn btn-primary py-3 px-4">Book Now</a></p>
+
+            {% endif %}  
+          </div>
+
+
+          <div class="col-md-6">       
+          	<div class="row">
+          		<div class="col-md-6 d-flex align-self-stretch ftco-animate">
+		            <div class="media block-6 services d-block">
+		              <div class="media-body">
+		                <h3 class="heading mb-3">Fitness Center</h3>
+		                <p>Complimentary for hotel guests, the facility is conveniently located adjacent to the gardens.</p>
+		              </div>
+		            </div>      
+		          </div>
+
+		          <div class="col-md-6 d-flex align-self-stretch ftco-animate">
+		            <div class="media block-6 services d-block">   
+		              <div class="media-body">
+		                <h3 class="heading mb-3">Tennis Courts</h3>
+		                <p>Court reservations and tennis rackets are complimentary for registered guests.Gather your players for a friendly match.</p>
+		              </div>
+		            </div>    
+		          </div>
+
+              <div class="col-md-6 d-flex align-self-stretch ftco-animate">
+                <div class="media block-6 services d-block">   
+                  <div class="media-body">
+                    <h3 class="heading mb-3">Restaurant</h3>
+                    <p>Our Restaurant offers some of most sought-after dining experiences with internationally recognized standards for service. Appease your taste buds and dine in style!</p>
+                  </div>
+                </div>    
+              </div>
+
+              <div class="col-md-6 d-flex align-self-stretch ftco-animate">
+                <div class="media block-6 services d-block">   
+                  <div class="media-body">
+                    <h3 class="heading mb-3">Cafe</h3>
+                    <p>Enjoy a selection of appetizers, beer and wine with live music backstage at The Hotel and Resort. Great venue to see upcoming new musicians and artists.</p>
+                  </div>
+                </div>    
+              </div>
+
+          	</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ftco-section testimony-section bg-bottom" style="background-image: url({% static 'website/images/bg_3.jpg' %});">
+      <div class="container">
+        <div class="row justify-content-center pb-4">
+          <div class="col-md-7 text-center heading-section ftco-animate">
+            <h2 class="mb-4">Tourist Feedback</h2>
+          </div>
+        </div>
+        <div class="row ftco-animate">
+          <div class="col-md-12">
+            <div class="carousel-testimony owl-carousel ftco-owl">
+              <div class="item">
+                <div class="testimony-wrap py-4">
+                  <div class="text">
+                    <p class="mb-4">Mumbai Tour has given the best vacation experience in budget price. The service provided by the agency was excellent. Thanks for making our trip memorable.</p>
+                    <div class="d-flex align-items-center">
+                      <div class="user-img" style="background-image: url({% static 'website/images/person_1.jpg' %})"></div>
+                      <div class="pl-3">
+                        <p class="name">John Scott</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimony-wrap py-4">
+                  <div class="text">
+                    <p class="mb-4">The tour was very Fantastic because of Pleasure India Holidays very well Organize. Through out the Tour we had pleasant experience and follow up from Travel Agent ( Vishal ).</p>
+                    <div class="d-flex align-items-center">
+                      <div class="user-img" style="background-image: url({% static 'website/images/person_3.jpg' %})"></div>
+                      <div class="pl-3">
+                        <p class="name">Alex Fernandes</p>
+                        
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimony-wrap py-4">
+                  <div class="text">
+                    <p class="mb-4">All your arrangements were up to the mark. All hotels and transportation arrangements were excellent.Thanks for your support and prompt response.</p>
+                    <div class="d-flex align-items-center">
+                      <div class="user-img" style="background-image: url({% static 'website/images/person_3.jpg' %})"></div>
+                      <div class="pl-3">
+                        <p class="name">Jack Scott</p>
+                       
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimony-wrap py-4">
+                  <div class="text">
+                    <p class="mb-4">All your arrangements were up to the mark. All hotels and transportation arrangements were excellent.Thanks for your support and prompt response.</p>
+                    <div class="d-flex align-items-center">
+                      <div class="user-img" style="background-image: url({% static 'website/images/person_1.jpg' %})"></div>
+                      <div class="pl-3">
+                        <p class="name">Luis Rego</p>               
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimony-wrap py-4">
+                  <div class="text">
+                    <p class="mb-4">All your arrangements were up to the mark. All hotels and transportation arrangements were excellent.Thanks for your support and prompt response.</p>
+                    <div class="d-flex align-items-center">
+                      <div class="user-img" style="background-image: url({% static 'website/images/person_2.jpg' %})"></div>
+                      <div class="pl-3">
+                        <p class="name">Pierre Coelho</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+{% endblock %}
